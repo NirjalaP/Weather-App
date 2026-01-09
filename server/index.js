@@ -6,7 +6,20 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// 🔹 CORS middleware – allow dev + production
+app.use(
+  cors({
+    origin: '*', 
+  })
+);
+
+// (optional but extra-safe: ensure headers are always set)
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 app.get('/api/weather', async (req, res) => {
   const { city } = req.query;
