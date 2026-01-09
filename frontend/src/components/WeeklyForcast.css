@@ -1,16 +1,18 @@
-.day-conatiner {
+/* container for the whole weekly forecast */
+.daily-container {
     margin: 1rem 0;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;           /* gap between each day row */
     max-width: 75%;
     padding: 1rem;
 }
 
+/* one row per day */
 .day-row {
     display: flex;
     justify-content: space-between;
-    padding: 0.75rem, 1 rem;
+    padding: 0.75rem 1rem;  /* fixed padding syntax */
     background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     backdrop-filter: blur(6px);
@@ -18,27 +20,33 @@
     font-size: 0.95rem;
 }
 
-.day-day{
+/* day name (Mon, Tue, …) */
+.day-label {
     flex: 2;
 }
 
-.day-rain, .day-temp{
+/* rain chance + temperature */
+.day-rain,
+.day-temp {
     flex: 1;
     text-align: center;
 }
 
-.day-condituon {
+/* condition icon + text */
+.day-condition {
     display: flex;
     align-items: center;
-    flex: 1;
+    flex: 2;
     gap: 0.5rem;
 }
 
-.day-icon{
-    width: 30px;        
+/* weather icon */
+.daily-icon {
+    width: 30px;
     height: 30px;
 }
 
+/* condition text */
 .day-text {
     font-size: 0.85rem;
 }

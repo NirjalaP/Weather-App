@@ -1,53 +1,86 @@
+.current-weather,
+.current-weather p,
+.detail-item,
+.detail-label,
+.detail-value {
+    color: #f5f7fa;          /* bright, high-contrast white */
+}
+
 .current-weather {
-    display: flex;
-    margin-bottom: 20px;
-    gap: 50px;
+  display: flex;
+  gap: 32px;               /* gap between the two big cards */
+  margin-bottom: 24px;
 }
 
-.temp{
-    margin-top: 0;
-
+/* Left card main temp text */
+.temp {
+  margin-top: 0;
 }
 
-    img{
-        width: 100px;
-    }
-    
-    p{
-        font-size: 1.2rem;
-        margin:  0;
-    }
-
-    .condition,
-.condition-icon{
-    text-align: center;
-}
-.condition-text{
-    margin-top: 0;
+/* Image + paragraphs inside the cards */
+.current-weather img {
+  width: 100px;
 }
 
-.left-card{
-    display: flex;
+.current-weather p {
+  font-size: 1.1rem;
+  margin: 0.1rem 0;
+}
+
+/* Condition (icon + text) on the left card */
+.condition,
+.condition-icon {
+  text-align: center;
+}
+
+.condition-text {
+  margin-top: 0.5rem;
+}
+
+/* Layout of the two cards */
+.left-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 2;
+  gap: 24px;
+  max-width: 420px;
+}
+
+.right-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ✅ Corrected class name: detail-item (no “s”) */
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;     /* gap between rows inside the right card */
+  font-size: 1.05rem;
+  gap: 10px;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  opacity: 1;
+  color: #dbe4ff;           /* soft light-blue for labels */
+}
+.detail-value {
+  text-align: right;
+}
+
+/* Optional: stack cards on small screens */
+@media (max-width: 768px) {
+  .current-weather {
     flex-direction: column;
-    gap: 50px;
-    max-width: 400px;
+  }
 }
 
-.right-card{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.details-item{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
-    gap: 10px;
-}
-
-.details-item:last-child{
-margin-bottom: 0;
-}
-    
+/* Optional: center content inside cards on small screens *
